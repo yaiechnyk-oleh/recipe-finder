@@ -9,7 +9,7 @@ A Next.js 15 application that helps you search for recipes by name, filter by cu
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/recipe-finder.git
+   git clone https://github.com/yaiechnyk-oleh/recipe-finder.git
    cd recipe-finder
    ```
 
