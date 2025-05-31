@@ -1,11 +1,19 @@
-import { Suspense } from "react"
-import RecipesClient from "./recipes-client"
-import RecipesLoading from "./loading"
+import { Suspense } from 'react';
+import RecipesServer from './recipes-server';
+import RecipesLoading from './loading';
 
-export default function RecipesPage() {
-    return (
-        <Suspense fallback={<RecipesLoading />}>
-            <RecipesClient />
-        </Suspense>
-    )
+interface RecipesPageProps {
+  searchParams: {
+    query?: string;
+    cuisine?: string;
+    maxReadyTime?: string;
+  };
+}
+
+export default function RecipesPage({ searchParams }: RecipesPageProps) {
+  return (
+    <Suspense fallback={<RecipesLoading />}>
+      <RecipesServer searchParams={searchParams} />
+    </Suspense>
+  );
 }
